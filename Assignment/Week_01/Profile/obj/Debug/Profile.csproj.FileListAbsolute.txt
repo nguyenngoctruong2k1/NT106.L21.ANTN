@@ -1,0 +1,10 @@
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\bin\Debug\Profile.exe.config
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\bin\Debug\Profile.exe
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\bin\Debug\Profile.pdb
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.csprojAssemblyReference.cache
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.Form1.resources
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.Properties.Resources.resources
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.csproj.GenerateResource.cache
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.csproj.CoreCompileInputs.cache
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.exe
+E:\Hoc_Ky_4\Nhap_Mon_Mang_May_Tinh\Tuan_1\Profile\Profile\obj\Debug\Profile.pdb

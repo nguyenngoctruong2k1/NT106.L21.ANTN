@@ -1,0 +1,101 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.IO;
+using System.Threading;
+
+namespace FileLab
+{
+    public partial class ReadFile : Form
+    {
+        OpenFileDialog ofd = new OpenFileDialog();
+        FileStream fs;
+        string content;
+        byte[] bytes;
+
+        public ReadFile()
+        {
+            InitializeComponent();
+        }
+        // Cách đọc sử dụng FileStream
+        private void btnFileStream_Click(object sender, EventArgs e)
+        {
+            // Hiển thị Hộp thoại OpenFileDialog cho phép chọn 1 file
+            // Thuộc tính FileName của OpenFileDialog trả về đường dẫn của file
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                fs = new FileStream(ofd.FileName, FileMode.OpenOrCreate);
+                bytes = new byte[fs.Length];
+                fs.Read(bytes, 0, (int)fs.Length);
+                content = Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+                richTextBox1.Text = content;
+                fs.Close();
+            }    
+        }
+
+        // Cách đọc sử dụng StreamReader
+        private void btnStreamReader_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                StreamReader sr = new StreamReader(ofd.FileName);
+                richTextBox1.Text = sr.ReadToEnd();
+                sr.Close();
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "";
+        }
+
+        private async void btnFileReadAsync_Click(object sender, EventArgs e)
+        {
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                using (FileStream fs = new FileStream(ofd.FileName, FileMode.OpenOrCreate))
+                {
+                    bytes = new byte[fs.Length];
+                    await fs.ReadAsync(bytes, 0, (int)fs.Length);
+                }
+                content = Encoding.UTF8.GetString(bytes, 0, bytes.Length);
+                richTextBox1.Text = content;
+            }
+        }
+
+        private async void btnStreamReadAsync_Click(object sender, EventArgs e)
+        {
+            //
+            ofd.ShowDialog();
+            if (ofd.FileName != "")
+            {
+                using (StreamReader fs = new StreamReader(ofd.FileName))
+                {
+                    richTextBox1.Text = await fs.ReadToEndAsync();
+                }
+            }
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ReadDatabase RD = new ReadDatabase();
+            RD.Show();
+        }
+
+        private void ReadFile_Load(object sender, EventArgs e)
+        {
+            //
+        }
+    }
+}
+
+
